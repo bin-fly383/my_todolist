@@ -10,9 +10,7 @@ import (
 	"gorm.io/gorm"
 )
 
-var (
-	DB *gorm.DB
-)
+var DB *gorm.DB
 
 type Todo struct {
 	ID     int    `json:"id"`
@@ -72,7 +70,7 @@ func main() {
 			c.BindJSON(&todo)
 
 			// 返回响应
-			if err = DB.Create(&todo).Error; err != nil {
+			if err := DB.Create(&todo).Error; err != nil {
 				c.JSON(http.StatusOK, gin.H{"error": err.Error()})
 			} else {
 				c.JSON(http.StatusOK, todo)
@@ -87,7 +85,6 @@ func main() {
 			} else {
 				c.JSON(http.StatusOK, todolist)
 			}
-
 		})
 		// 查看某一个待办事项
 		v1Group.GET("/todo/:id", func(c *gin.Context) {
