@@ -1,15 +1,13 @@
-
-import { createApp } from 'vue'
+import Vue from 'vue'
+import './plugins/axios'
 import App from './App.vue'
-import ElementPlus from 'element-plus'
-import 'element-plus/dist/index.css'
-import * as ElementPlusIconsVue from '@element-plus/icons-vue'
-import axios from 'axios'
-import VueAxios from 'vue-axios'
+import './plugins/element.js'
 import router from './router'
+import './plugins/axios.js'
 
-const app = createApp(App)
-for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
-    app.component(key, component)
-}
-app.use(router).use(VueAxios, axios).use(ElementPlus).mount('#app')
+Vue.config.productionTip = true
+
+new Vue({
+  router,
+  render: h => h(App)
+}).$mount('#app')

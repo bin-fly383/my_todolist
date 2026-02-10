@@ -1,17 +1,19 @@
 <template>
   <el-container>
-    <el-header>Go课程小练习</el-header>
+    <el-header>gin框架小练习</el-header>
     <el-main>
-      <el-row justify="center">
+      <el-row type="flex" justify="center">
         <el-col :xs="20" :span="12" >
           <div class="grid-content">
-            <el-divider>小清单</el-divider>
+            <el-divider>
+              <h1>bubble清单</h1>
+            </el-divider>
             <TodoList></TodoList>
           </div>
         </el-col>
       </el-row>
     </el-main>
-    <el-footer>by 七米老师 liwenzhou.com</el-footer>
+    <el-footer>q1mi出品 Go学习交流QQ群：645090316</el-footer>
   </el-container>
 </template>
 
@@ -20,7 +22,7 @@
 import TodoList from "@/components/TodoList.vue";
 
 export default {
-  name: "HomeView",
+  name: "Index",
   components: {
     TodoList
   }

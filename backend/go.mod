@@ -1,4 +1,4 @@
-module bubble/buble_backend
+module bubble/bubble_backend
 
 go 1.25.2
 

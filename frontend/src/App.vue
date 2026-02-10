@@ -1,10 +1,17 @@
-<script setup>
-import HomeView from "@/views/HomeView.vue";
-</script>
-
 <template>
-    <HomeView></HomeView>
+  <Index></Index>
 </template>
+
+<script>
+import Index from "@/views/Index.vue";
+
+export default {
+  name: "app",
+  components: {
+    Index,
+  }
+};
+</script>
 
 <style>
 body {
